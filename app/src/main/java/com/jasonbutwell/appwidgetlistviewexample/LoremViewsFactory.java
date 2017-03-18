@@ -13,7 +13,8 @@ import android.widget.RemoteViewsService;
 
 public class LoremViewsFactory implements RemoteViewsService.RemoteViewsFactory {
 
-    private static final String[] items={"lorem", "ipsum", "dolor",
+    private static final String[] items = {
+            "lorem", "ipsum", "dolor",
             "sit", "amet", "consectetuer",
             "adipiscing", "elit", "morbi",
             "vel", "ligula", "vitae",
@@ -22,7 +23,8 @@ public class LoremViewsFactory implements RemoteViewsService.RemoteViewsFactory 
             "placerat", "ante",
             "porttitor", "sodales",
             "pellentesque", "augue",
-            "purus"};
+            "purus"
+    };
 
     private Context context = null;
     private int appWidgetId;
@@ -35,7 +37,6 @@ public class LoremViewsFactory implements RemoteViewsService.RemoteViewsFactory 
 
     @Override
     public void onCreate() {
-
     }
 
     @Override
@@ -63,9 +64,10 @@ public class LoremViewsFactory implements RemoteViewsService.RemoteViewsFactory 
         extras.putString(WidgetProvider.EXTRA_WORD, items[position]);
 
         intent.putExtras(extras);
+
         row.setOnClickFillInIntent(android.R.id.text1, intent);
 
-        return(row);
+        return row;
     }
 
     @Override

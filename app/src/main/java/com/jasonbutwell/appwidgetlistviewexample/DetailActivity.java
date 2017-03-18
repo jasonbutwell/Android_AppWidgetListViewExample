@@ -14,11 +14,14 @@ public class DetailActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String word=getIntent().getStringExtra(WidgetProvider.EXTRA_WORD);
+        // Grab the word clicked on
+        String word = getIntent().getStringExtra( WidgetProvider.EXTRA_WORD );
 
+        // if no word retrieved
         if (word == null)
             word = "We did not get a word!";
 
+        // Display the word that was clicked on
         Toast.makeText(this, word, Toast.LENGTH_LONG).show();
 
         //finish();
